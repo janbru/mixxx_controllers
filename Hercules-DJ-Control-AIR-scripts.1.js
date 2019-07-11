@@ -12,6 +12,7 @@ HerculesAir.scratchEnable_rpm = 33+1/3
 
 HerculesAir.shiftButtonPressed = false
 HerculesAir.enableSpinBack = false
+HerculesAir.recoringInProgress = false
 
 HerculesAir.wheel_multiplier = 0.4
 
@@ -214,4 +215,17 @@ HerculesAir.gainDecrease = function(midino, control, value, status, group) {
 		var current = engine.getParameter(group, "pregain");
 		engine.setParameter(group, "pregain", current - 0.05);
 	}
+}
+
+HerculesAir.toggleRecording = function(midino, control, value, status, group) {
+    if (value==0x7f) {
+        HerculesAir.recoringInProgress = !HerculesAir.recoringInProgress;
+        if (HerculesAir.recoringInProgress) {
+        	engine.setParameter(group, "toggle_recording", 1);
+            midi.sendShortMsg(status,control, 0x7f);
+        } else {
+        	engine.setParameter(group, "toggle_recording", 1);
+            midi.sendShortMsg(status,control, 0x0);
+        }
+    }
 }
