@@ -201,3 +201,17 @@ HerculesAir.spinback= function(midino, control, value, status,group) {
         }
     }
 }
+
+HerculesAir.gainIncrease = function(midino, control, value, status, group) {
+	if (value==0x7f) {
+		var current = engine.getParameter(group, "pregain");
+		engine.setParameter(group, "pregain", current + 0.05);
+	}
+}
+
+HerculesAir.gainDecrease = function(midino, control, value, status, group) {
+	if (value==0x7f) {
+		var current = engine.getParameter(group, "pregain");
+		engine.setParameter(group, "pregain", current - 0.05);
+	}
+}
