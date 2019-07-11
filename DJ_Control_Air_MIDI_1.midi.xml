@@ -760,22 +760,6 @@
             </output>
             <output>
                 <group>[Channel1]</group>
-                <key>cue_indicator</key>
-                <description>Cue Button LED Deck A</description>
-                <status>0x90</status>
-                <midino>0x11</midino>
-                <minimum>0.5</minimum>
-            </output>
-            <output>
-                <group>[Channel2]</group>
-                <key>cue_indicator</key>
-                <description>Cue Button LED Deck B</description>
-                <status>0x90</status>
-                <midino>0x12</midino>
-                <minimum>0.5</minimum>
-            </output>
-            <output>
-                <group>[Channel1]</group>
                 <key>play</key>
                 <description>Play Button LED Deck A</description>
                 <status>0x90</status>
