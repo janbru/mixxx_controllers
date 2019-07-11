@@ -149,7 +149,7 @@ HerculesAir.wheelTurn = function(midino, control, value, status, group) {
     }
 
     if (engine.getValue(group, "play") == 0) {
-		var new_position = engine.getValue(group,"playposition") + 0.008 * (value == 0x01 ? 1 : -1)
+		var new_position = engine.getValue(group,"playposition") + 0.0005 * (value == 0x01 ? 1 : -1)
 		if(new_position<0) new_position = 0
 		if(new_position>1) new_position = 1
 		engine.setValue(group,"playposition",new_position);
